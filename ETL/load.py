@@ -59,7 +59,7 @@ def load_to_bronze(all_list_data):
         df.write.mode('overwrite').option("header", "true").parquet(path_file)
         logger.info(f"DataFrame {i+1} sauvegardé à : {path_file}")
 
-    logger.info("All data have been saved to bronze layer.")
+    logger.success("All data have been saved to bronze layer successfully.")
 
 
 def load_to_silver(all_df_cleaned:object):
@@ -74,7 +74,7 @@ def load_to_silver(all_df_cleaned:object):
     # save data on parquet format
     all_df_cleaned.repartition(50).write.mode('overwrite').option("header", "true").parquet(path_file)
 
-    logger.info("Data has been saved to silver.")
+    logger.success("Data has been saved to silver successfully.")
 
 
 
@@ -97,5 +97,5 @@ def load_to_gold(all_dim_facts):
 
         logger.info(f"Table {tables_names[i]} has been saved to {path_file}")
 
-    logger.info("All the tables has been saved to gold.")
+    logger.success("All the tables has been saved to gold successfully.")
 
