@@ -9,6 +9,10 @@ estate.log
 ETL/__pycache__
 config.py
 __pycache__
+my_venv
+Scripts_test_nootebook
+data
+Scripts_test_nootebook
 
 
 dags

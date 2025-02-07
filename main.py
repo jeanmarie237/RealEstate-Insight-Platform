@@ -57,9 +57,9 @@ def run_pipeline():
 
 
     # load to bronze 
-    #load_to_bronze(read_links)
+    load_to_bronze(read_links)
     # Load to silver
-    #load_to_silver(data_transf)
+    load_to_silver(data_transf)
     # Load to gold layer
     load_to_gold(all_dim_facts=all_dim_facts_tables)
 

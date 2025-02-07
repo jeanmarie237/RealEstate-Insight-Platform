@@ -72,7 +72,7 @@ def load_to_silver(all_df_cleaned:object):
 
     path_file = f"{file_path}/all_real_estate"
     # save data on parquet format
-    all_df_cleaned.repartition(50).write.mode('overwrite').option("header", "true").parquet(path_file)
+    all_df_cleaned.repartition(1).write.mode('overwrite').option("header", "true").parquet(path_file)
 
     logger.success("Data has been saved to silver successfully.")
 
@@ -93,7 +93,7 @@ def load_to_gold(all_dim_facts):
         # path we would save the table
         path_file = f"{file_path}/{tables_names[i]}"
         # save data on parquet format
-        df.repartition(50).write.mode('overwrite').option("header", "true").parquet(path_file)
+        df.coalesce(1).write.mode('overwrite').option("header", "true").parquet(path_file)
 
         logger.info(f"Table {tables_names[i]} has been saved to {path_file}")
 

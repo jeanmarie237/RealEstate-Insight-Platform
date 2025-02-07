@@ -51,7 +51,7 @@ def transform_data(data_contact:object, col_list:list, col_drop:list):
         df_clean = data_contact.drop(*col_drop)
 
         df_clean = (
-            df_clean.withColumn("Date mutation"  , to_date(df_clean["Date mutation"], "dd/MM:yyyy"))
+            df_clean.withColumn("Date mutation"  , to_date(df_clean["Date mutation"], "dd/MM/yyyy"))
             .withColumn("Valeur fonciere"        , regexp_replace(df_clean["Valeur fonciere"], ",", "."))
             .withColumn("Valeur fonciere"        , col("Valeur fonciere").cast("double"))
         )
@@ -66,6 +66,17 @@ def transform_data(data_contact:object, col_list:list, col_drop:list):
         # Rename columns corectly
         col_renam = [col.lower().replace(" ", "_") for col in df_clean.columns]
         df_clean = df_clean.toDF(*col_renam)
+
+
+        df_clean = (
+            df_clean.withColumn("surface_reelle_bati"        , col("surface_reelle_bati").cast("double"))
+            .withColumn("nombre_pieces_principales"          , col("nombre_pieces_principales").cast("int"))
+            .withColumn("surface_terrain"                    , col("surface_terrain").cast("double"))
+            .withColumn("code_departement"                   , col("code_departement").cast("int"))
+            .withColumn("code_commune"                       , col("code_commune").cast("int"))
+            .withColumn("nombre_de_lots"                     , col("nombre_de_lots").cast("int"))
+        )
+
 
         # 
         df_clean = df_clean.withColumn(
@@ -117,7 +128,7 @@ def generate_id_dim(df_clean):
         .distinct() \
         .withColumn("id_mutation", monotonically_increasing_id())
     ).persist()
-    all_dim_facts.append(dim_commune)
+    all_dim_facts.append(dim_mutation)
 
     # Create dimension for immo
     dim_local = (
