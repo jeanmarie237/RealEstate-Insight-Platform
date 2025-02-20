@@ -13,6 +13,7 @@ my_venv
 Scripts_test_nootebook
 data
 Scripts_test_nootebook
+config.py:Zone.Identifier
 
 
 dags
