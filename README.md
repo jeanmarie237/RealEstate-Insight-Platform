@@ -32,14 +32,16 @@ L'architecture suit l'approche Médaillon (Bronze, Silver, Gold) pour structurer
 ```bash
 git clone git@github.com:jeanmarie237/RealEstate-Insight-Platform.git
 cd RealEstate-Insight-Platform
-
+```
 ### 2. Installer les dépendances :
+```bash
 pip install -r requirements.txt
-
+```
 ### 3. Lancer le projet :
+```bash
 python main.py
+```
 
-
-## Ressources acticles 
+### Ressources acticles 
 Pour plus d'informations vous avez l'article complet : https://medium.com/@jabengzoa/freelance-data-analyst-engineer-architecture-data-avec-azure-spark-synapse-power-bi-99fb2a28eaee
 
