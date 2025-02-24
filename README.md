@@ -13,18 +13,18 @@ L’objectif est de :
 
 ## 🏗 Architecture du Projet
 L'architecture suit l'approche Médaillon (Bronze, Silver, Gold) pour structurer et fiabiliser les données.
-🔸 Bronze Layer : Ingestion des données brutes depuis des sources ouvertes.
-🔹 Silver Layer : Transformation, nettoyage et enrichissement des données.
-🏅 Gold Layer : Stockage final optimisé pour l'analyse et la visualisation.
+- Bronze Layer : Ingestion des données brutes depuis des sources ouvertes.
+- Silver Layer : Transformation, nettoyage et enrichissement des données.
+- Gold Layer : Stockage final optimisé pour l'analyse et la visualisation.
 
 ![alt text](images/image.png)
 
 ## ⚙ Technologies Utilisées
-🔹 Langages : Python, SQL
-🔹 Orchestration : Azure Data Factory
-🔹 Traitement de données : Apache Spark
-🔹 Stockage : Azure Data Lake Gen 2, Azure Synapse Analytics
-🔹 Visualisation : Power BI
+- Langages : Python, SQL
+- Orchestration : Azure Data Factory
+- Traitement de données : Apache Spark
+- Stockage : Azure Data Lake Gen 2, Azure Synapse Analytics
+- Visualisation : Power BI
 
 ## Installation & Exécution
 
