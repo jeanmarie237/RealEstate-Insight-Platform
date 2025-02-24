@@ -28,15 +28,17 @@ L'architecture suit l'approche Médaillon (Bronze, Silver, Gold) pour structurer
 
 ## Installation & Exécution
 
-1. Cloner le repo :
-    git clone git@github.com:jeanmarie237/RealEstate-Insight-Platform.git
-    cd RealEstate-Insight-Platform 
+### 1. Cloner le repo :
 
-2. Installer les dépendances :
-    pip install -r requirements.txt
+git clone git@github.com:jeanmarie237/RealEstate-Insight-Platform.git
+cd RealEstate-Insight-Platform
 
-3. Lancer le projet :
-    python main.py
+### 2. Installer les dépendances :
+pip install -r requirements.txt
+
+### 3. Lancer le projet :
+python main.py
+
 
 ## Ressources acticles 
 Pour plus d'informations vous avez l'article complet : https://medium.com/@jabengzoa/freelance-data-analyst-engineer-architecture-data-avec-azure-spark-synapse-power-bi-99fb2a28eaee
